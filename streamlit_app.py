@@ -1,8 +1,10 @@
 import streamlit as st
 import requests
+import openai
+import os
 
-# Reemplaza 'tu_clave_api' con la clave API real que obtuviste de Perplexity.AI
-clave_api = 'tu_clave_api'
+# Accedemos a la clave de API de OpenAI a través de una variable de entorno
+openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 def obtener_respuesta(pregunta):
     url = 'https://api.perplexity.ai/v1/dialogue'
