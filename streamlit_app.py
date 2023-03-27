@@ -38,11 +38,11 @@ def obtener_respuesta(pregunta):
 st.title("Chatbot de Legislación Guatemalteca")
 st.write("Escribe tu pregunta sobre la legislación guatemaltealteca y el chatbot intentará responderla.")
 
-pregunta_usuario = st.text_input(“Escribe tu pregunta aquí:”)
+pregunta_usuario = st.text_input("Escribe tu pregunta aquí:")
 
-if st.button(“Enviar pregunta”):
+if st.button("Enviar pregunta"):
 if pregunta_usuario:
 respuesta_chatbot = obtener_respuesta(pregunta_usuario)
 st.write(f"Respuesta del chatbot: {respuesta_chatbot}")
 else:
-st.warning(“Por favor, ingresa una pregunta antes de presionar el botón.”)
+st.warning("Por favor, ingresa una pregunta antes de presionar el botón.")
