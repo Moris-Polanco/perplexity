@@ -40,7 +40,7 @@ st.write("Escribe tu pregunta sobre la legislación guatemaltealteca y el chatbo
 
 pregunta_usuario = st.text_input("Escribe tu pregunta aquí:")
 
-if st.button("Enviar pregunta"):
+    if st.button("Enviar pregunta"):
     if pregunta_usuario:
         respuesta_chatbot = obtener_respuesta(pregunta_usuario)
     st.write(f"Respuesta del chatbot: {respuesta_chatbot}")
