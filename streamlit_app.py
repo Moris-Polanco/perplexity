@@ -8,12 +8,10 @@ openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 def obtener_respuesta(pregunta):
     url = 'https://api.perplexity.ai/v1/dialogue'
-
     headers = {
-        'Authorization': f'Bearer {clave_api}',
+        'Authorization': f'Bearer {openai.api_key}',
         'Content-Type': 'application/json',
     }
-
     data = {
         'input': {
             'text': pregunta,
@@ -27,9 +25,7 @@ def obtener_respuesta(pregunta):
             ]
         }
     }
-
     respuesta = requests.post(url, json=data, headers=headers)
-
     if respuesta.status_code == 200:
         return respuesta.json()['output']['text']
     else:
@@ -45,4 +41,4 @@ if st.button("Enviar pregunta"):
         respuesta_chatbot = obtener_respuesta(pregunta_usuario)
         st.write(f"Respuesta del chatbot: {respuesta_chatbot}")
     else:
-        st.warning("Por favor, ingresa una pregunta antes de presionar el botón.") 
+        st.warning("Por favor, ingresa una pregunta antes de presionar el botón.")
